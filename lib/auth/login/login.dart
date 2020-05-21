@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:trackit/auth/registration/registration.dart';
+import 'package:trackit/core/home-page/home-page.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -7,7 +9,6 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-
   final _formKey = GlobalKey<FormState>();
   final FocusNode _newFocusNode = FocusNode();
 
@@ -15,19 +16,9 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color.fromRGBO(16, 39, 51, 1),
-        height: MediaQuery
-            .of(context)
-            .size
-            .height,
-        width: MediaQuery
-            .of(context)
-            .size
-            .width,
-        child: GestureDetector(
-          onTap: () {
-            FocusScope.of(context).requestFocus(_newFocusNode);
-          },
+          color: Color.fromRGBO(16, 39, 51, 1),
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
           child: Container(
             height: 1000.0,
             child: Form(
@@ -36,12 +27,12 @@ class _LoginState extends State<Login> {
                 shrinkWrap: true,
                 padding: EdgeInsets.only(left: 24.0, right: 24.0, top: 60.0),
                 children: [
-              Image(
-              image: AssetImage("assets/logo.png"),
-              height: MediaQuery.of(context).size.height / 4,
-              width: MediaQuery.of(context).size.height / 4,
-            ),
-            SizedBox(
+                  Image(
+                    image: AssetImage("assets/logo.png"),
+                    height: MediaQuery.of(context).size.height / 4,
+                    width: MediaQuery.of(context).size.height / 4,
+                  ),
+                  SizedBox(
                     height: 34,
                   ),
                   Container(
@@ -62,23 +53,23 @@ class _LoginState extends State<Login> {
                             ),
                           ),
                           child: TextFormField(
-                            autofocus: true,
-                            autocorrect: false,
-                            style: TextStyle(
+                              autofocus: false,
+                              autocorrect: false,
+                              style: TextStyle(
                                 fontSize: 18,
                                 color: Colors.white,
-                            ),
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: "E-mail",
-                              hintStyle: TextStyle(color: Colors.grey),
-                            ),
-                            textInputAction: TextInputAction.next,
-                            onFieldSubmitted: (String value) {
-                              FocusScope.of(context).requestFocus(_newFocusNode);
-                            }
-                          ),
+                              ),
+                              keyboardType: TextInputType.emailAddress,
+                              decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "E-mail",
+                                hintStyle: TextStyle(color: Colors.grey),
+                              ),
+                              textInputAction: TextInputAction.next,
+                              onFieldSubmitted: (String value) {
+                                FocusScope.of(context)
+                                    .requestFocus(_newFocusNode);
+                              }),
                         ),
                         Container(
                           padding: EdgeInsets.all(10.0),
@@ -112,11 +103,20 @@ class _LoginState extends State<Login> {
                   SizedBox(
                     height: 20.0,
                   ),
-                  Center(
-                    child: Text(
-                      "Forgot Password?",
-                      style: TextStyle(
-                        color: Colors.pink[200],
+                  GestureDetector(
+                    onTap: () => print('Forgot Password tapped'),
+                    child: Center(
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: 'Forgot Password?',
+                              style: TextStyle(
+                                color: Colors.pink[200],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -130,30 +130,60 @@ class _LoginState extends State<Login> {
                       borderRadius: BorderRadius.circular(50),
                       color: Color.fromRGBO(49, 39, 79, 1),
                     ),
-                    child: Center(
+                    child: RaisedButton(
+                      elevation: 1.0,
+                      onPressed: () => Navigator.pushAndRemoveUntil(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (BuildContext context) => HomePage()),
+                            (Route<dynamic> route) => false,
+                      ),
+                      padding: EdgeInsets.all(15.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      color: Color.fromRGBO(49, 39, 79, 1),
                       child: Text(
-                        "Login",
-                        style: TextStyle(color: Colors.white),
+                        'Login',
+                        style: TextStyle(
+                          color: Colors.white,
+                          letterSpacing: 1.5,
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ),
                   SizedBox(
                     height: 20.0,
                   ),
-                  Center(
-                    child: Text(
-                      "Create Account",
-                      style: TextStyle(
-                        color: Colors.pink[200],
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, '/register'),
+                    child: Center(
+                      child: RichText(
+                        text: TextSpan(
+                          children: [
+                            TextSpan(
+                              text: 'Don\'t have an Account?',
+                              style: TextStyle(
+                                color: Colors.pink[200],
+                              ),
+                            ),
+                            TextSpan(
+                              text: ' Sign Up',
+                              style: TextStyle(
+                                color: Colors.pink[200],
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-          ),
-        )
-      ),
+          ),),
     );
   }
 }
