@@ -1,6 +1,7 @@
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:trackit/account/account.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _HomePageState extends State<HomePage> {
     screen1(),
     screen2(),
     screen3(),
-    screen4(),
+    AccountPage(),
   ];
 
   @override
@@ -114,9 +115,9 @@ class _HomePageState extends State<HomePage> {
           ),
           BubbleBottomBarItem(
               backgroundColor: Color.fromRGBO(16, 39, 51, 1.0),
-              icon: Icon(Icons.menu, color: Colors.white,),
-              activeIcon: Icon(Icons.menu, color: Colors.yellowAccent,),
-              title: Text("Screen 4", style: TextStyle(color: Colors.yellowAccent)))
+              icon: Icon(Icons.person, color: Colors.white,),
+              activeIcon: Icon(Icons.person, color: Colors.yellowAccent,),
+              title: Text("Account", style: TextStyle(color: Colors.yellowAccent)))
         ],
       ),
     );

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:trackit/auth/registration/registration.dart';
 import 'package:trackit/core/home-page/home-page.dart';
 
 class Login extends StatefulWidget {
