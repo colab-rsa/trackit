@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:trackit/auth/login/login.dart';
-import 'package:trackit/core/home-page/home-page.dart';
+import 'package:trackit/screens/core/home-page/home-page.dart';
 
 class Registration extends StatefulWidget {
   @override
