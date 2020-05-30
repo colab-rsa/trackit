@@ -71,6 +71,36 @@ class _AccountState extends State<AccountPage> {
                                   child: Row(
                                     children: [
                                       Icon(
+                                        Icons.mode_edit,
+                                        color: Colors.grey.shade500,
+                                      ),
+                                      SizedBox(
+                                        width: 12,
+                                      ),
+                                      Text(
+                                        "Edit Profile",
+                                        style: TextStyle(color: Colors.grey.shade500),
+                                      ),
+                                      Spacer(
+                                        flex: 1,
+                                      ),
+                                      Icon(
+                                        Icons.navigate_next,
+                                        color: Colors.grey.shade500,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                splashColor: Colors.teal.shade200,
+                                onTap: () => {},
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 16, right: 12),
+                                  padding: EdgeInsets.only(top: 12, bottom: 12),
+                                  child: Row(
+                                    children: [
+                                      Icon(
                                         Icons.notifications,
                                         color: Colors.grey.shade500,
                                       ),
@@ -79,6 +109,66 @@ class _AccountState extends State<AccountPage> {
                                       ),
                                       Text(
                                         "Notifications",
+                                        style: TextStyle(color: Colors.grey.shade500),
+                                      ),
+                                      Spacer(
+                                        flex: 1,
+                                      ),
+                                      Icon(
+                                        Icons.navigate_next,
+                                        color: Colors.grey.shade500,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                splashColor: Colors.teal.shade200,
+                                onTap: () => {},
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 16, right: 12),
+                                  padding: EdgeInsets.only(top: 12, bottom: 12),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.person_add,
+                                        color: Colors.grey.shade500,
+                                      ),
+                                      SizedBox(
+                                        width: 12,
+                                      ),
+                                      Text(
+                                        "Invite Friend",
+                                        style: TextStyle(color: Colors.grey.shade500),
+                                      ),
+                                      Spacer(
+                                        flex: 1,
+                                      ),
+                                      Icon(
+                                        Icons.navigate_next,
+                                        color: Colors.grey.shade500,
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                splashColor: Colors.teal.shade200,
+                                onTap: () => {},
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 16, right: 12),
+                                  padding: EdgeInsets.only(top: 12, bottom: 12),
+                                  child: Row(
+                                    children: [
+                                      Icon(
+                                        Icons.info_outline,
+                                        color: Colors.grey.shade500,
+                                      ),
+                                      SizedBox(
+                                        width: 12,
+                                      ),
+                                      Text(
+                                        "About Us",
                                         style: TextStyle(color: Colors.grey.shade500),
                                       ),
                                       Spacer(
