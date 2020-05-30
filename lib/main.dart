@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:trackit/auth/login/login.dart';
-import 'package:trackit/core/home-page/home-page.dart';
+import 'package:trackit/screens/auth/login/login.dart';
+import 'package:trackit/screens/auth/registration/registration.dart';
+import 'package:trackit/screens/core/home-page/home-page.dart';
 
-import 'auth/registration/registration.dart';
 
 void main() {
   runApp(MyApp());

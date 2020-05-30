@@ -1,7 +1,7 @@
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:trackit/account/account.dart';
+import 'package:trackit/screens/account/account.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -14,7 +14,6 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _widgets = [
     screen1(),
     screen2(),
-    screen3(),
     AccountPage(),
   ];
 
@@ -93,24 +92,16 @@ class _HomePageState extends State<HomePage> {
         items: <BubbleBottomBarItem>[
           BubbleBottomBarItem(
               backgroundColor: Color.fromRGBO(16, 39, 51, 1.0),
-              icon: Icon(Icons.dashboard, color: Colors.white,),
-              activeIcon: Icon(Icons.dashboard, color: Colors.yellowAccent,),
-              title: Text("Screen 1", style: TextStyle(color: Colors.yellowAccent)
+              icon: Icon(Icons.home, color: Colors.white,),
+              activeIcon: Icon(Icons.home, color: Colors.yellowAccent,),
+              title: Text("Home", style: TextStyle(color: Colors.yellowAccent)
               )
           ),
           BubbleBottomBarItem(
               backgroundColor: Color.fromRGBO(16, 39, 51, 1.0),
-              icon: Icon(Icons.access_time, color: Colors.white,),
-              activeIcon: Icon(Icons.access_time, color: Colors.yellowAccent,),
-              title: Text("Screen 2", style: TextStyle(color: Colors.yellowAccent)
-              )
-          ),
-          BubbleBottomBarItem(
-              backgroundColor: Color.fromRGBO(16, 39, 51, 1.0),
-              icon: Icon(Icons.folder_open, color: Colors.white,),
-              activeIcon: Icon(Icons.folder_open, color: Colors.yellowAccent,),
-              title: Text(
-                  "Screen 3", style: TextStyle(color: Colors.yellowAccent)
+              icon: Icon(Icons.category, color: Colors.white,),
+              activeIcon: Icon(Icons.category, color: Colors.yellowAccent,),
+              title: Text("Boards", style: TextStyle(color: Colors.yellowAccent)
               )
           ),
           BubbleBottomBarItem(
@@ -137,14 +128,6 @@ screen2() {
   return Center(
     child: Text(
       'Screen 2',
-      style: TextStyle(color: Colors.white),
-    ),
-  );
-}
-screen3() {
-  return Center(
-    child:  Text(
-      'Screen 3',
       style: TextStyle(color: Colors.white),
     ),
   );
