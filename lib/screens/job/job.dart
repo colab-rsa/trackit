@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:trackit/widgets/cards/job-card.dart';
 
 final List<String> backgroundList = [
   'assets/astronaut.jpg',
@@ -36,32 +37,7 @@ final List<Map<String, dynamic>> jobList = [
 final List<Widget> imageSliders = jobList
     .map(
       (item) => Container(
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 50,
-            ),
-            Container(
-                height: 350,
-                width: 220,
-                decoration: new BoxDecoration(),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  child: Image.asset(item['poster'],
-                      fit: BoxFit.cover, width: 1000.0),
-                )),
-            SizedBox(
-              height: 15,
-            ),
-            Text(
-              item['title'],
-              style: TextStyle(color: Colors.white, fontSize: 18),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-          ],
-        ),
+        child: JobCard(item),
       ),
     )
     .toList();
@@ -72,21 +48,10 @@ class JobPage extends StatefulWidget {
 }
 
 class _JobPageState extends State<JobPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
 
   CarouselController buttonCarouselController = CarouselController();
   ScrollController _scrollController = new ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -141,7 +106,7 @@ class _JobPageState extends State<JobPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () => {},
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
