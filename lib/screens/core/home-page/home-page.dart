@@ -102,7 +102,7 @@ class _HomePageState extends State<HomePage> {
               backgroundColor: Color.fromRGBO(16, 39, 51, 1.0),
               icon: Icon(Icons.category, color: Colors.white,),
               activeIcon: Icon(Icons.category, color: Colors.yellowAccent,),
-              title: Text("Boards", style: TextStyle(color: Colors.yellowAccent)
+              title: Text("Jobs", style: TextStyle(color: Colors.yellowAccent)
               )
           ),
           BubbleBottomBarItem(
