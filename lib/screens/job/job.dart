@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:trackit/widgets/cards/job-card.dart';
 
 final List<String> backgroundList = [
   'assets/astronaut.jpg',
@@ -36,32 +37,7 @@ final List<Map<String, dynamic>> jobList = [
 final List<Widget> imageSliders = jobList
     .map(
       (item) => Container(
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: 50,
-            ),
-            Container(
-                height: 350,
-                width: 220,
-                decoration: new BoxDecoration(),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0)),
-                  child: Image.asset(item['poster'],
-                      fit: BoxFit.cover, width: 1000.0),
-                )),
-            SizedBox(
-              height: 15,
-            ),
-            Text(
-              item['title'],
-              style: TextStyle(color: Colors.white, fontSize: 18),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-          ],
-        ),
+        child: JobCard(item),
       ),
     )
     .toList();
