@@ -2,6 +2,7 @@ import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:trackit/screens/account/account.dart';
+import 'package:trackit/screens/job/job.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> _widgets = [
     screen1(),
-    screen2(),
+    JobPage(),
     AccountPage(),
   ];
 
